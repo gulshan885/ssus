@@ -32,10 +32,10 @@ if st.button("Mark Attendance"):
 
     st.subheader("Attendance Records")
 
-    records = list(attendance_collection.find())
+records = list(attendance_collection.find())
 
-    for record in records:
-        st.write(record["students_name"], "|", record["date"], "|", record["status"])
+for record in records:
+    st.write(record["students_name"], "|", record["date"], "|", record["status"])
 
 st.subheader("Attendance Summary")
 
