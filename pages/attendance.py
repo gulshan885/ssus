@@ -35,14 +35,14 @@ if st.button("Mark Attendance"):
     records = list(attendance_collection.find())
 
     for record in records:
-        st.write(record["student_name"], "|", record["date"], "|", record["status"])
+        st.write(record["students_name"], "|", record["date"], "|", record["status"])
 
 st.subheader("Attendance Summary")
 
 for student in students_names:
     
-    total = attendance_collection.count_documents({"student_name": student})
-    present = attendance_collection.count_documents({"student_name": student, "status": "Present"})
+    total = attendance_collection.count_documents({"students_name": student})
+    present = attendance_collection.count_documents({"students_name": student, "status": "Present"})
 
     if total > 0:
         percentage = (present / total) * 100
